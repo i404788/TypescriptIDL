@@ -45,13 +45,28 @@ To delcare a `FunctionType` is similar to a method declaration:
 Note that the return-type is required for FunctionTypes but not in Method/Function declarations.
 
 ### Arguments
-Arguments have an `Identifier` and `Type`. 
+Arugments follow:
+```
+『...《『Identifier』:》『Type』』
+```
+
+Arguments typically have an `Identifier` and `Type`, but Identifiers can be omitted if so desired.
+
+An example of this:
+```
+Foo(bool, int): int
+```
 
 If the last argument is prefixed by `...` it has to be an `Array<『Type』>`; in implementation this will describe a variable number of parameters if `『Type』`.
 
 An example of this:
 ```
 Foo(arg0: bool, arg1: int, ...argN: Array<int>): int
+```
+
+When ommitting `Identifier`s:
+```
+Foo(bool, int, ...Array<int>): int
 ```
 
 ### Fields/Variables

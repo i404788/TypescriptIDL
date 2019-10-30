@@ -37,6 +37,7 @@ A method/function follows the Typescript syntax, but doesn't require a keyword (
 If no return-type is used it will be assumed void/undefined.
 
 ### FunctionType
+FunctionTypes are special types the arguments/return-types are restricted.
 To delcare a `FunctionType` is similar to a method declaration:
 ```
 (《『...Argument』》) => 『Type』
@@ -72,7 +73,7 @@ Foo(bool, int, ...Array<int>): int
 ### Fields/Variables
 Fields and other Variables can be defined as:
 ```
-『Type』 『Identifier』
+『Identifier』: 『Type』
 ```
 
 ### Classes
@@ -102,6 +103,21 @@ For example:
 ```
 Volatile<Optional<int>>
 ```
+
+### Type Algebra
+Types can be combined to create new types using various operations.
+
+#### Union
+Union can be used with the `|` operator. `『Type』|『Type』`.
+
+This will permit use of all types within the union.
+
+### Intersect
+Intersect can be used with the `&` operator. `『Type』&『Type』`.
+
+This will permit the use of deep overlapping types.
+This means that if you have intersect 2 map-like types, the resulting type will contain the overlapping key-value pairs.
+
 
 ## Special Non-Primitives
 ### Shorthand Array
